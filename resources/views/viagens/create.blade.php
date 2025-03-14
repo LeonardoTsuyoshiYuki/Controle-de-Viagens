@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="km_final">KM Final</label>
-                <input type="number" name="km_final" id="km_final" class="form-control">
+                <input type="number" name="km_final" id="km_final" class="form-control" disabled>
             </div>
             <div class="form-group">
             <label for="data_hora_saida">Data e Hora da Viagem</label>
@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label for="data_hora_chegada">Data e Hora de Chegada</label>
-                <input type="datetime-local" name="data_hora_chegada" id="data_hora_chegada" class="form-control">
+                <input type="datetime-local" name="data_hora_chegada" id="data_hora_chegada" class="form-control" disabled>
             </div>
             <button type="submit" class="btn btn-success mt-3">Salvar</button>
         </form>
@@ -50,6 +50,7 @@
             // Converte o valor das datas para o formato dd/mm/yyyy
             var dataViagemValue = dataViagemInput.value;
             var dataChegadaValue = dataChegadaInput.value;
+            
 
             // Converte data de viagem
             if (dataViagemValue) {

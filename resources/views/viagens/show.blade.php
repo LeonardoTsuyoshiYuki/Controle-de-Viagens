@@ -14,7 +14,7 @@
                     @if (!is_null($viagem->km_final))
                         {{ number_format($viagem->km_final, 0, ',', '.') }}
                     @else
-                        Ainda não registrado
+                        Viagem em andamento
                     @endif
                 </p>
                 <p class="card-text"><strong>Data e Hora de Início:</strong> 

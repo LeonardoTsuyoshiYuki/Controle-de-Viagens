@@ -7,7 +7,6 @@
         <table class="table mt-3">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Motorista</th>
                     <th>Veículo</th>
                     <th>KM Inicial</th>
@@ -20,17 +19,22 @@
             <tbody>
                 @foreach($viagens as $viagem)
                     <tr>
-                        <td>{{ $viagem->id }}</td>
                         <td>{{ $viagem->motorista->nome }}</td>
                         <td>{{ $viagem->veiculo->placa }}</td>
                         <td>{{ $viagem->km_inicial }}</td>
-                        <td>{{ $viagem->km_final }}</td>
+                        <td>
+                            @if ($viagem->km_final)
+                                {{ $viagem->km_final }}
+                            @else
+                                Em andamento
+                            @endif
+                        </td>
                         <td>{{ \Carbon\Carbon::parse($viagem->data_hora_saida)->format('d/m/Y H:i') }}</td>
                         <td>
                             @if ($viagem->data_hora_chegada)
                                 {{ \Carbon\Carbon::parse($viagem->data_hora_chegada)->format('d/m/Y H:i') }}
                             @else
-                                Viagem em andamento
+                                Em andamento
                             @endif
                         </td>
                         <td>
